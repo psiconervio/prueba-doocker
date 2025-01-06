@@ -6,6 +6,8 @@ para crearse y escribir las configuraciones de nuestro contenedor
 *para ver*: docker network ls
 PARA QUE LAS APLICACIONES SE CONECTEN ENTRE SI
 DEBEMOS USAR EL NOMBREID DE CADA CONTENEDOR EN LA CONEXION BACK-FRONT
-
-#MODIFICAR CREDENCIALES DE CONEXION DE BASE DE DATOS A LAS ESTABLECIDAS POR DOCKER Y LA BASE DE DATOS
-cambiar
+3#BUILDER APP -t nombreapp:version
+docker build -t miapp:1.0.0 .
+#COMANDO PARA CREAR EL CONTENEDOR CONECTADO A LA RED --network mired
+docker create -p27017:27017 --name mongodb --network mired 
+ -e MONGO_INITDB_ROOT_USERNAME=admin MONGO_INITDB_ROOT_PASSWORD=admin mongo
